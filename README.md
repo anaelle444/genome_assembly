@@ -33,4 +33,8 @@ Limites et améliorations possibles
 - Pas de nettoyage/filtrage des k-mers de faible couverture.
 - Pas de compactage (unitigs) avancé ni de suppression d'embranchements.
 - Pas d'utilisation de structures mémoire-compactes — adapté aux petits jeux de données.
-# genome_assembly
+# Genome_assembly
+
+brought to you by an amazing team : Najat, Tara and Anaelle! 
+
+

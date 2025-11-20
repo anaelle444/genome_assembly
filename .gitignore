@@ -1,0 +1,6 @@
+*.o
+*.fq
+*.fa
+*.fastq
+*.fasta
+assembler
