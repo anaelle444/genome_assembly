@@ -1,3 +1,21 @@
+# Genome_assembly
+
+brought to you by an amazing team : Najat, Tara and Anaelle! 
+
+
+Objectif de TP : Création d'un outil d'assemblage de génome sur un jeu de données de tailles réduites 
+
+Méthode Possible : 
+* Méthode Gloutonne 
+* Méthode OLC
+* Méthode Eulérienne 
+
+=> Méthode Eulérienne avec Graphe de Bruijn et graphe de k-mers 
+
+![texte alternatif](image/schema.png)
+
+
+
 DeBruijnAssembler
 =================
 
