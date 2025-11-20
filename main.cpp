@@ -29,7 +29,7 @@ vector<string> lireFastq(const string& nomFichier) {
     ifstream fichier(nomFichier);
     
     if (!fichier.is_open()) {
-        cerr << "Erreur : impossible d'ouvrir le fichier " << nomFichier << endl;
+        cerr << "🙈 Erreur : impossible d'ouvrir le fichier " << nomFichier << endl;
         return sequences;
     }
     
@@ -54,7 +54,7 @@ vector<string> lireFasta(const string& nomFichier) {
     ifstream fichier(nomFichier);
     
     if (!fichier.is_open()) {
-        cerr << "Erreur : impossible d'ouvrir le fichier " << nomFichier << endl;
+        cerr << "🙈 Erreur : impossible d'ouvrir le fichier " << nomFichier << endl;
         return sequences;
     }
     
@@ -90,7 +90,7 @@ void ecrireFasta(const string& nomFichier, const string& sequence, const string&
     ofstream fichier(nomFichier);
     
     if (!fichier.is_open()) {
-        cerr << "Erreur : impossible d'écrire dans le fichier " << nomFichier << endl;
+        cerr << "🙈 Erreur : impossible d'écrire dans le fichier " << nomFichier << endl;
         return;
     }
     
@@ -102,7 +102,7 @@ void ecrireFasta(const string& nomFichier, const string& sequence, const string&
     }
     
     fichier.close();
-    cout << "Séquence assemblée écrite dans " << nomFichier << endl;
+    cout << "🎀 Séquence assemblée écrite dans " << nomFichier << endl;
 }
 
 int main(int argc, char* argv[]) {
@@ -142,7 +142,7 @@ int main(int argc, char* argv[]) {
     }
     
     if (sequences.empty()) {
-        cerr << "Erreur : aucune séquence lue" << endl;
+        cerr << "🙈 Erreur : aucune séquence lue" << endl;
         return 1;
     }
     
@@ -173,6 +173,7 @@ int main(int argc, char* argv[]) {
     ecrireFasta(fichierSortie, sequenceAssemblee);
     
     cout << endl << "=== Assemblage terminé avec succès ===" << endl;
+    cout << endl << "✨ Thank you for trusting us with your genome assembly ✨" << endl;
     
     return 0;
 }
