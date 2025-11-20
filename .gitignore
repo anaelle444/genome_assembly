@@ -3,4 +3,7 @@
 *.fa
 *.fastq
 *.fasta
+*.sam
+*.bam
+*.bai
 assembler

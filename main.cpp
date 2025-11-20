@@ -151,7 +151,23 @@ int main(int argc, char* argv[]) {
     // Étape 2 : Extraction des k-mers
     cout << "Étape 2 : Extraction des k-mers..." << endl;
     vector<string> kmers = kmerExtract(k, sequences);
-    cout << "  " << kmers.size() << " k-mers extraits et triés" << endl << endl;
+    cout << "  " << kmers.size() << " k-mers extraits et triés" << endl;
+    
+    // Écriture des k-mers dans un fichier intermédiaire
+    string fichierKmers = "kmers_sorted.fasta";
+    cout << "  Écriture des k-mers triés dans " << fichierKmers << "..." << endl;
+    ofstream fichierK(fichierKmers);
+    if (fichierK.is_open()) {
+        for (size_t i = 0; i < kmers.size(); i++) {
+            fichierK << ">kmer_" << (i + 1) << endl;
+            fichierK << kmers[i] << endl;
+        }
+        fichierK.close();
+        cout << "  ✅ K-mers sauvegardés dans " << fichierKmers << endl;
+    } else {
+        cerr << "  ⚠️  Avertissement : impossible d'écrire le fichier " << fichierKmers << endl;
+    }
+    cout << endl;
     
     // Étape 3 : Calcul des arcs
     cout << "Étape 3 : Calcul des arcs du graphe..." << endl;
