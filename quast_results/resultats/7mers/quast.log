@@ -1,0 +1,84 @@
+/home/najat/miniconda3/envs/BILL/bin/quast -r /home/najat/quast_ascii/resultats/varankomodo_reference.fasta /home/najat/quast_ascii/resultats/out_7.fa -o /home/najat/quast_ascii/resultats/7mers
+
+Version: 5.3.0
+
+System information:
+  OS: Linux-6.8.0-87-generic-x86_64-with-glibc2.35 (linux_64)
+  Python version: 3.9.23
+  CPUs number: 4
+
+Started: 2025-11-22 15:30:33
+
+Logging to /home/najat/quast_ascii/resultats/7mers/quast.log
+NOTICE: Maximum number of threads is set to 1 (use --threads option to set it manually)
+
+CWD: /home/najat/Master_bioinformatique/M2/Bioinformatique avancée/quast_results
+Main parameters: 
+  MODE: default, threads: 1, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Reference:
+  /home/najat/quast_ascii/resultats/varankomodo_reference.fasta ==> varankomodo_reference
+
+Contigs:
+  Pre-processing...
+  /home/najat/quast_ascii/resultats/out_7.fa ==> out_7
+
+2025-11-22 15:30:35
+Running Basic statistics processor...
+  Reference genome:
+    varankomodo_reference.fasta, length = 10624, num fragments = 1, GC % = 44.14
+  Contig files: 
+    out_7
+  Calculating N50 and L50...
+    out_7, N50 = 33562, L50 = 1, auN = 33562.0, Total length = 33562, GC % = 47.20, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/najat/quast_ascii/resultats/7mers/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/najat/quast_ascii/resultats/7mers/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/najat/quast_ascii/resultats/7mers/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/najat/quast_ascii/resultats/7mers/basic_stats/GC_content_plot.pdf
+  Drawing out_7 GC content plot...
+    saved to /home/najat/quast_ascii/resultats/7mers/basic_stats/out_7_GC_content_plot.pdf
+Done.
+
+2025-11-22 15:30:40
+Running Contig analyzer...
+WARNING: Version of installed minimap2 differs from its version in the QUAST package (2.28). Please make sure that you use an actual version of software.
+  out_7
+  Logging to files /home/najat/quast_ascii/resultats/7mers/contigs_reports/contigs_report_out_7.stdout and contigs_report_out_7.stderr...
+  Aligning contigs to the reference
+WARNING: Version of installed minimap2 differs from its version in the QUAST package (2.28). Please make sure that you use an actual version of software.
+  /home/najat/miniconda3/envs/BILL/bin/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join \
+  -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs \
+  -t 1 /home/najat/quast_ascii/resultats/7mers/quast_corrected_input/varankomodo_reference.fasta \
+  /home/najat/quast_ascii/resultats/7mers/quast_corrected_input/out_7.fa > /home/najat/quast_ascii/resultats/7mers/contigs_reports/minimap_output/out_7.coords_tmp \
+  2>> /home/najat/quast_ascii/resultats/7mers/contigs_reports/contigs_report_out_7.stderr
+  Nothing aligned for 'out_7'.
+Failed aligning the contigs for all the assemblies. Only basic stats are going to be evaluated.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2025-11-22 15:30:40
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating PDF with all tables and plots...
+  2 of 2: Creating Icarus viewers...
+Done
+
+2025-11-22 15:30:43
+RESULTS:
+  Text versions of total report are saved to /home/najat/quast_ascii/resultats/7mers/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/najat/quast_ascii/resultats/7mers/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/najat/quast_ascii/resultats/7mers/report.html
+  PDF version (tables and plots) is saved to /home/najat/quast_ascii/resultats/7mers/report.pdf
+  Icarus (contig browser) is saved to /home/najat/quast_ascii/resultats/7mers/icarus.html
+  Log is saved to /home/najat/quast_ascii/resultats/7mers/quast.log
+
+Finished: 2025-11-22 15:30:43
+Elapsed time: 0:00:10.343272
+NOTICEs: 2; WARNINGs: 2; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

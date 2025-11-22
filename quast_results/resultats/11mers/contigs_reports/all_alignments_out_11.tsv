@@ -1,0 +1,16 @@
+S1	E1	S2	E2	Reference	Contig	IDY	Ambiguous	Best_group
+2077	2251	5341	5520	AB080275.1	sequence_assemblee	97.22		True
+unknown
+6778	6882	9945	10051	AB080275.1	sequence_assemblee	98.13		True
+unknown
+8568	8692	11029	11154	AB080275.1	sequence_assemblee	99.21		True
+unknown
+2241	2532	12135	12426	AB080275.1	sequence_assemblee	100.0		True
+unknown
+2781	2896	18022	18137	AB080275.1	sequence_assemblee	99.14		True
+unknown
+4163	4287	20402	20528	AB080275.1	sequence_assemblee	98.43		True
+unknown
+6541	6678	22433	22570	AB080275.1	sequence_assemblee	100.0		True
+unknown
+CONTIG	sequence_assemblee	24785	mis_unaligned

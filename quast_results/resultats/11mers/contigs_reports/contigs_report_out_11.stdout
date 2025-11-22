@@ -1,0 +1,88 @@
+Aligning contigs to reference...
+	Aligning contigs to the reference
+Filtering alignments...
+Parsing coords...
+Loading reference...
+	Loaded [AB080275.1]
+	Total Regions: 1
+	Total Region Length: 10624
+Analyzing contigs...
+CONTIG: sequence_assemblee (24785bp)
+Best alignment score: 292.0 (LEN: 292, IDY: 100.00), Total number of alignments: 35
+			Looking for the best set of alignments (out of 35 total alignments)
+			Skipping redundant alignments after choosing the best set of alignments
+		Skipping redundant alignment 92 180 | 1 93 | 89 93 | 95.7 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 885 975 | 4281 4190 | 91 92 | 98.91 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 9024 9149 | 4963 4837 | 126 127 | 99.21 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 3160 3297 | 5067 5206 | 138 140 | 98.57 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 9153 9249 | 7112 7015 | 97 98 | 97.96 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 9391 9477 | 7491 7405 | 87 87 | 98.85 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 9239 9390 | 7668 7516 | 152 153 | 99.35 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 8566 8632 | 7724 7658 | 67 67 | 100.0 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 6362 6475 | 7745 7858 | 114 114 | 100.0 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 1018 1105 | 7996 7909 | 88 88 | 98.86 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 7563 7633 | 8720 8792 | 71 73 | 97.26 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 9254 9505 | 8783 9046 | 252 264 | 95.45 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 2752 2856 | 10354 10249 | 105 106 | 99.06 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 1834 1908 | 10725 10800 | 75 76 | 98.68 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 5609 5739 | 10870 11003 | 131 134 | 97.01 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 6973 7092 | 11149 11268 | 120 120 | 100.0 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 3436 3528 | 11359 11266 | 93 94 | 98.94 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 561 664 | 11774 11670 | 104 105 | 98.1 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 6905 6994 | 15581 15672 | 90 92 | 97.83 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 7876 7963 | 16972 16883 | 88 90 | 97.78 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 5091 5182 | 17081 16989 | 92 93 | 97.85 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 3710 3806 | 17502 17405 | 97 98 | 98.98 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 8499 8567 | 18496 18428 | 69 69 | 100.0 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 3532 3642 | 19139 19027 | 111 113 | 97.35 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 9606 9674 | 20872 20940 | 69 69 | 100.0 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 455 550 | 21986 22081 | 96 96 | 100.0 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 966 1108 | 22072 22214 | 143 143 | 100.0 | AB080275.1 sequence_assemblee
+		Skipping redundant alignment 4337 4473 | 22298 22434 | 137 137 | 99.27 | AB080275.1 sequence_assemblee
+			The best set is below. Score: 501.8, number of alignments: 7, unaligned bases: 23699
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 1086 out of 24785 non-N bases (4.38%))
+			Warning! This contig is more unaligned than misassembled. Contig length is 24785 (number of Ns: 0) and total length of all aligns is 1086
+		Alignment: 2077 2251 | 5341 5520 | 175 180 | 97.22 | AB080275.1 sequence_assemblee
+		Alignment: 6778 6882 | 9945 10051 | 105 107 | 98.13 | AB080275.1 sequence_assemblee
+		Alignment: 8568 8692 | 11029 11154 | 125 126 | 99.21 | AB080275.1 sequence_assemblee
+		Alignment: 2241 2532 | 12135 12426 | 292 292 | 100.0 | AB080275.1 sequence_assemblee
+		Alignment: 2781 2896 | 18022 18137 | 116 116 | 99.14 | AB080275.1 sequence_assemblee
+		Alignment: 4163 4287 | 20402 20528 | 125 127 | 98.43 | AB080275.1 sequence_assemblee
+		Alignment: 6541 6678 | 22433 22570 | 138 138 | 100.0 | AB080275.1 sequence_assemblee
+		Unaligned bases: 23699
+
+Analyzing coverage...
+Writing SNPs into /home/najat/quast_ascii/resultats/11mers/contigs_reports/minimap_output/out_11.used_snps
+
+Analysis is finished!
+Founded SNPs were written into /home/najat/quast_ascii/resultats/11mers/contigs_reports/minimap_output/out_11.used_snps
+
+Results:
+	Local Misassemblies: 0
+	Misassemblies: 0
+		Relocations: 0
+		Translocations: 0
+		Inversions: 0
+	Scaffold gap extensive misassemblies: 0
+	Scaffold gap local misassemblies: 0
+	Misassembled Contigs: 0
+	Misassembled Contig Bases: 0
+	Misassemblies Inter-Contig Overlap ("Extra" Aligned Bases): 0
+Unaligned Contigs: 0 + 1 part
+Half Unaligned Contigs with Misassemblies: 1
+Unaligned Bases in Fully and Partially Unaligned Contigs: 23699
+
+Ambiguously Mapped Contigs: 0
+Total Bases in Ambiguously Mapped Contigs: 0
+"Extra" Aligned Bases in Ambiguously Mapped Contigs: 0
+Note that --allow-ambiguity option was set to "one" and only first alignment per each of these contigs was used (there is no "extra" aligned bases).
+
+	Covered Bases in Reference: 1065
+	Raw Aligned Bases in Assembly: 1086
+	Total Aligned Bases in Assembly (with "Extras"): 1086
+
+	SNPs: 1
+	Insertions: 10
+	Deletions: 0
+

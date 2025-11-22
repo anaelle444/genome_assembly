@@ -1,0 +1,57 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                     out_11    
+# contigs (>= 0 bp)          1         
+# contigs (>= 1000 bp)       1         
+# contigs (>= 5000 bp)       1         
+# contigs (>= 10000 bp)      1         
+# contigs (>= 25000 bp)      0         
+# contigs (>= 50000 bp)      0         
+Total length (>= 0 bp)       24785     
+Total length (>= 1000 bp)    24785     
+Total length (>= 5000 bp)    24785     
+Total length (>= 10000 bp)   24785     
+Total length (>= 25000 bp)   0         
+Total length (>= 50000 bp)   0         
+# contigs                    1         
+Largest contig               24785     
+Total length                 24785     
+Reference length             10624     
+GC (%)                       44.22     
+Reference GC (%)             44.14     
+N50                          24785     
+NG50                         24785     
+N90                          24785     
+NG90                         24785     
+auN                          24785.0   
+auNG                         57821.6   
+L50                          1         
+LG50                         1         
+L90                          1         
+LG90                         1         
+# misassemblies              0         
+# misassembled contigs       0         
+Misassembled contigs length  0         
+# local misassemblies        0         
+# scaffold gap ext. mis.     0         
+# scaffold gap loc. mis.     0         
+# unaligned mis. contigs     1         
+# unaligned contigs          0 + 1 part
+Unaligned length             23699     
+Genome fraction (%)          10.024    
+Duplication ratio            1.020     
+# N's per 100 kbp            0.00      
+# mismatches per 100 kbp     92.08     
+# indels per 100 kbp         644.57    
+Largest alignment            292       
+Total aligned length         1086      
+NA50                         -         
+NGA50                        -         
+NA90                         -         
+NGA90                        -         
+auNA                         7.8       
+auNGA                        18.2      
+LA50                         -         
+LGA50                        -         
+LA90                         -         
+LGA90                        -         

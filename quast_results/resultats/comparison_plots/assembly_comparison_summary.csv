@@ -1,0 +1,6 @@
+Assembly_Name	# contigs	Total length	Largest contig	N50	NGA50	GC (%)	Genome fraction (%)	# misassemblies	# mismatches per 100 kbp	# indels per 100 kbp	Duplication ratio
+7-mers	1	33562	33562	33562		47.2					
+11-mers	1	24785	24785	24785		44.22	10.02	0.0	92.08	644.57	1.02
+21-mers	1	13725	13725	13725	7859.0	44.26	73.87	0.0	11057.39	661.66	1.0
+31-mers	1	14813	14813	14813	8616.0	44.42	80.89	0.0	6406.69	649.95	1.0
+Minia	1	9936	9936	9936	9936.0	44.05	93.52	0.0	0.0	0.0	1.0

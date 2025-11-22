@@ -1,0 +1,28 @@
+/home/najat/miniconda3/envs/BILL/bin/quast -r /home/najat/quast_ascii/resultats/varankomodo_reference.fasta /home/najat/quast_ascii/resultats/out_91.fa -o /home/najat/quast_ascii/resultats/91mers
+
+Version: 5.3.0
+
+System information:
+  OS: Linux-6.8.0-87-generic-x86_64-with-glibc2.35 (linux_64)
+  Python version: 3.9.23
+  CPUs number: 4
+
+Started: 2025-11-22 15:35:11
+
+Logging to /home/najat/quast_ascii/resultats/91mers/quast.log
+NOTICE: Maximum number of threads is set to 1 (use --threads option to set it manually)
+
+CWD: /home/najat/Master_bioinformatique/M2/Bioinformatique avancée/quast_results
+Main parameters: 
+  MODE: default, threads: 1, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Reference:
+  /home/najat/quast_ascii/resultats/varankomodo_reference.fasta ==> varankomodo_reference
+
+Contigs:
+  Pre-processing...
+WARNING: Skipping out_91 because it doesn't contain contigs >= 500 bp.
+
+
+ERROR! None of the assembly files contains correct contigs. Please, provide different files or decrease --min-contig threshold.
