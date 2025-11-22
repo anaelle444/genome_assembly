@@ -1,9 +1,0 @@
-*.o
-*.fq
-*.fa
-*.fastq
-*.fasta
-*.sam
-*.bam
-*.bai
-assembler
