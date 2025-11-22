@@ -20,8 +20,40 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <ctime>
+#include <sys/resource.h>
+#include <iomanip>
 
 using namespace std;
+
+// Fonction pour obtenir la mémoire utilisée en MB
+double getMemoryUsage() {
+    struct rusage usage;
+    getrusage(RUSAGE_SELF, &usage);
+    // ru_maxrss est en kilobytes sur Linux, convertir en MB
+    return usage.ru_maxrss / 1024.0;
+}
+
+// Fonction pour formater le temps en heures:minutes:secondes
+string formatTime(double seconds) {
+    int hours = (int)(seconds / 3600);
+    int minutes = (int)((seconds - hours * 3600) / 60);
+    double secs = seconds - hours * 3600 - minutes * 60;
+    
+    if (hours > 0) {
+        char buffer[50];
+        sprintf(buffer, "%dh %dm %.2fs", hours, minutes, secs);
+        return string(buffer);
+    } else if (minutes > 0) {
+        char buffer[50];
+        sprintf(buffer, "%dm %.2fs", minutes, secs);
+        return string(buffer);
+    } else {
+        char buffer[50];
+        sprintf(buffer, "%.2fs", secs);
+        return string(buffer);
+    }
+}
 
 // Fonction pour lire les séquences depuis un fichier FASTQ
 vector<string> lireFastq(const string& nomFichier) {
@@ -106,6 +138,10 @@ void ecrireFasta(const string& nomFichier, const string& sequence, const string&
 }
 
 int main(int argc, char* argv[]) {
+    // Démarrage du chronomètre
+    clock_t tempsDebut = clock();
+    double memoireDebut = getMemoryUsage();
+    
     cout << "=== Assembleur de génome - Graphe de De Bruijn ===" << endl << endl;
     
     // Paramètres par défaut
@@ -131,6 +167,7 @@ int main(int argc, char* argv[]) {
     
     // Étape 1 : Lecture des séquences
     cout << "Étape 1 : Lecture des séquences..." << endl;
+    clock_t temps1 = clock();
     vector<string> sequences;
     
     // Déterminer le type de fichier
@@ -146,12 +183,17 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     
-    cout << "  " << sequences.size() << " séquences lues" << endl << endl;
+    cout << "  " << sequences.size() << " séquences lues" << endl;
+    double temps1Ecoule = (double)(clock() - temps1) / CLOCKS_PER_SEC;
+    cout << "  ⏱️  Temps : " << formatTime(temps1Ecoule) << endl << endl;
     
     // Étape 2 : Extraction des k-mers
     cout << "Étape 2 : Extraction des k-mers..." << endl;
+    clock_t temps2 = clock();
     vector<string> kmers = kmerExtract(k, sequences);
     cout << "  " << kmers.size() << " k-mers extraits et triés" << endl;
+    double temps2Ecoule = (double)(clock() - temps2) / CLOCKS_PER_SEC;
+    cout << "  ⏱️  Temps : " << formatTime(temps2Ecoule) << endl;
     
     // Écriture des k-mers dans un fichier intermédiaire
     string fichierKmers = "kmers_sorted.fasta";
@@ -171,24 +213,45 @@ int main(int argc, char* argv[]) {
     
     // Étape 3 : Calcul des arcs
     cout << "Étape 3 : Calcul des arcs du graphe..." << endl;
+    clock_t temps3 = clock();
     vector<pair<int, int>> arcs = calculArcs(kmers, k);
-    cout << "  " << arcs.size() << " arcs calculés" << endl << endl;
+    cout << "  " << arcs.size() << " arcs calculés" << endl;
+    double temps3Ecoule = (double)(clock() - temps3) / CLOCKS_PER_SEC;
+    cout << "  ⏱️  Temps : " << formatTime(temps3Ecoule) << endl << endl;
     
     // Étape 4 : Construction du graphe de De Bruijn
     cout << "Étape 4 : Construction du graphe de De Bruijn..." << endl;
+    clock_t temps4 = clock();
     GrapheBruijn graphe = grapheBruijn(kmers, arcs);
-    cout << "  Graphe construit avec " << graphe.nombreNoeuds() << " nœuds" << endl << endl;
+    cout << "  Graphe construit avec " << graphe.nombreNoeuds() << " nœuds" << endl;
+    double temps4Ecoule = (double)(clock() - temps4) / CLOCKS_PER_SEC;
+    cout << "  ⏱️  Temps : " << formatTime(temps4Ecoule) << endl << endl;
     
     // Étape 5 : Recherche du chemin eulérien et assemblage
     cout << "Étape 5 : Recherche du chemin eulérien et assemblage..." << endl;
+    clock_t temps5 = clock();
     string sequenceAssemblee = cheminEulerienEtAssemblage(graphe, kmers, k);
-    cout << "  Séquence assemblée : " << sequenceAssemblee.length() << " bases" << endl << endl;
+    cout << "  Séquence assemblée : " << sequenceAssemblee.length() << " bases" << endl;
+    double temps5Ecoule = (double)(clock() - temps5) / CLOCKS_PER_SEC;
+    cout << "  ⏱️  Temps : " << formatTime(temps5Ecoule) << endl << endl;
     
     // Étape 6 : Écriture du résultat
     cout << "Étape 6 : Écriture du résultat..." << endl;
     ecrireFasta(fichierSortie, sequenceAssemblee);
     
+    // Calcul des statistiques finales
+    clock_t tempsFin = clock();
+    double tempsTotal = (double)(tempsFin - tempsDebut) / CLOCKS_PER_SEC;
+    double memoireFin = getMemoryUsage();
+    double memoireUtilisee = memoireFin - memoireDebut;
+    
     cout << endl << "=== Assemblage terminé avec succès ===" << endl;
+    cout << endl << "📊 STATISTIQUES D'EXÉCUTION" << endl;
+    cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << endl;
+    cout << "⏱️  Temps total d'exécution : " << formatTime(tempsTotal) << endl;
+    cout << "💾 Mémoire utilisée : " << fixed << setprecision(2) << memoireUtilisee << " MB" << endl;
+    cout << "💾 Mémoire maximale : " << fixed << setprecision(2) << memoireFin << " MB" << endl;
+    cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << endl;
     cout << endl << "✨ Thank you for trusting us with your genome assembly ✨" << endl;
     
     return 0;
