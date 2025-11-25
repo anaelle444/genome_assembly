@@ -21,6 +21,8 @@ assemblies = {
     '11-mers': '11mers',
     '21-mers': '21mers',
     '31-mers': '31mers',
+    '61-mers': '61mers',
+    '51-mers': '51mers',
     '91-mers': '91mers',
     'Minia': 'minia_results'
 }

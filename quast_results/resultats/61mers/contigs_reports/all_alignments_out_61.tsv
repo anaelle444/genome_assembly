@@ -1,0 +1,39 @@
+S1	E1	S2	E2	Reference	Contig	IDY	Ambiguous	Best_group
+92	260	1	169	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+261	454	211	404	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+455	840	467	852	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+841	1120	907	1186	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+1121	2024	1311	2235	AB080275.1	sequence_assemblee	97.73		True
+indel: indel (> 5bp)
+2025	2237	2298	2510	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+2238	2761	2573	3096	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+2762	2889	3221	3348	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+2890	2973	3373	3457	AB080275.1	sequence_assemblee	97.65		True
+indel: indel (> 5bp)
+2974	3084	3520	3630	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+3085	3397	3755	4067	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+3398	3755	4130	4489	AB080275.1	sequence_assemblee	99.44		True
+indel: indel (> 5bp)
+3756	4151	4614	5022	AB080275.1	sequence_assemblee	96.82		True
+indel: indel (> 5bp)
+4152	4522	5111	5481	AB080275.1	sequence_assemblee	99.73		True
+local misassembly
+4584	4752	5774	5942	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+4753	4895	6005	6147	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+4896	4985	6210	6299	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+4986	5158	6343	6515	AB080275.1	sequence_assemblee	100.0		True
+indel: indel (> 5bp)
+5159	5380	6574	6795	AB080275.1	sequence_assemblee	99.55		True
+CONTIG	sequence_assemblee	7592	correct

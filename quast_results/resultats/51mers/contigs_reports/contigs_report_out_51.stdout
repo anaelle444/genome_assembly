@@ -1,0 +1,156 @@
+Aligning contigs to reference...
+	Aligning contigs to the reference
+Filtering alignments...
+Parsing coords...
+Loading reference...
+	Loaded [AB080275.1]
+	Total Regions: 1
+	Total Region Length: 10624
+Analyzing contigs...
+CONTIG: sequence_assemblee (16159bp)
+Best alignment score: 456.0 (LEN: 457, IDY: 99.78), Total number of alignments: 52
+			Looking for the best set of alignments (out of 52 total alignments)
+		This contig has several significant sets of alignments. [An ambiguously mapped contig]
+		Using only the very best set (option --ambiguity-usage is set to "one").
+			The best set is below. Score: 9309.0, number of alignments: 52, unaligned bases: 6757
+		This contig is misassembled.
+		This contig is partially unaligned. (Aligned 9402 out of 16159 non-N bases (58.18%))
+			Real Alignment 1: 92 188 | 1 97 | 97 97 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 2: 189 260 | 150 221 | 72 72 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 41; 0 mismatches (number of Ns: 0)
+			Real Alignment 3: 261 339 | 263 341 | 79 79 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 104; 0 mismatches (number of Ns: 0)
+			Real Alignment 4: 340 454 | 446 560 | 115 115 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 5: 455 696 | 613 854 | 242 242 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 73; 0 mismatches (number of Ns: 0)
+			Real Alignment 6: 697 841 | 928 1072 | 145 145 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 7: 842 1173 | 1125 1456 | 332 332 | 99.7 | AB080275.1 sequence_assemblee
+			  Gap between these two alignments (local misassembly). Inconsistency = -171
+			Real Alignment 8: 1447 1695 | 1901 2155 | 249 255 | 97.65 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 58; 0 mismatches (number of Ns: 0)
+			Real Alignment 9: 1696 2005 | 2214 2523 | 310 310 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 104; 0 mismatches (number of Ns: 0)
+			Real Alignment 10: 2006 2238 | 2628 2860 | 233 233 | 99.57 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 11: 2239 2629 | 2913 3303 | 391 391 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 12: 2630 2761 | 3356 3487 | 132 132 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 104; 0 mismatches (number of Ns: 0)
+			Real Alignment 13: 2762 2889 | 3592 3719 | 128 128 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 24; 0 mismatches (number of Ns: 0)
+			Real Alignment 14: 2890 2973 | 3744 3828 | 84 85 | 97.65 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 15: 2974 3084 | 3881 3991 | 111 111 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 104; 0 mismatches (number of Ns: 0)
+			Real Alignment 16: 3085 3386 | 4096 4397 | 302 302 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 104; 0 mismatches (number of Ns: 0)
+			Real Alignment 17: 3387 3507 | 4502 4624 | 121 123 | 98.37 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 18: 3508 3755 | 4677 4924 | 248 248 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 104; 0 mismatches (number of Ns: 0)
+			Real Alignment 19: 3756 4095 | 5029 5368 | 340 340 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 143; 56 mismatches (number of Ns: 0)
+			Real Alignment 20: 4152 4460 | 5568 5876 | 309 309 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 21: 4461 4554 | 5929 6022 | 94 94 | 98.94 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 100; 0 mismatches (number of Ns: 0)
+			Real Alignment 22: 4555 4621 | 6123 6189 | 67 67 | 98.51 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 156; 0 mismatches (number of Ns: 0)
+			Real Alignment 23: 4622 4752 | 6346 6476 | 131 131 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 24: 4753 4895 | 6529 6671 | 143 143 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 25: 4896 4985 | 6724 6813 | 90 90 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 43; 0 mismatches (number of Ns: 0)
+			Real Alignment 26: 4986 5157 | 6857 7028 | 172 172 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 27: 5158 5357 | 7081 7280 | 200 200 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 23; 0 mismatches (number of Ns: 0)
+			Real Alignment 28: 5358 5504 | 7304 7450 | 147 147 | 99.32 | AB080275.1 sequence_assemblee
+			  Gap between these two alignments (local misassembly). Inconsistency = -205
+			Real Alignment 29: 5505 5616 | 7656 7767 | 112 112 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 30: 5617 5976 | 7820 8179 | 360 360 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 147; 0 mismatches (number of Ns: 0)
+			Real Alignment 31: 5977 6044 | 8327 8394 | 68 68 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 183; 0 mismatches (number of Ns: 0)
+			Real Alignment 32: 6045 6116 | 8578 8649 | 72 72 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 121; 53 mismatches (number of Ns: 0)
+			Real Alignment 33: 6170 6285 | 8824 8939 | 116 116 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 34: 6286 6488 | 8992 9194 | 203 203 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 35: 6489 6914 | 9247 9672 | 426 426 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 114; 58 mismatches (number of Ns: 0)
+			Real Alignment 36: 6973 7142 | 9845 10014 | 170 170 | 99.41 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 149; 40 mismatches (number of Ns: 0)
+			Real Alignment 37: 7183 7530 | 10204 10551 | 348 348 | 99.71 | AB080275.1 sequence_assemblee
+			  Gap between these two alignments (local misassembly). Inconsistency = -487
+			Real Alignment 38: 7531 7733 | 11039 11241 | 203 203 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 156; 0 mismatches (number of Ns: 0)
+			Real Alignment 39: 7734 7979 | 11398 11643 | 246 246 | 100.0 | AB080275.1 sequence_assemblee
+			  Gap between these two alignments (local misassembly). Inconsistency = -156
+			Real Alignment 40: 8040 8199 | 11860 12019 | 160 160 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 41: 8200 8288 | 12072 12160 | 89 89 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 117; 0 mismatches (number of Ns: 0)
+			Real Alignment 42: 8289 8397 | 12278 12386 | 109 109 | 99.08 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 102; 0 mismatches (number of Ns: 0)
+			Real Alignment 43: 8398 8532 | 12489 12623 | 135 135 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 44: 8533 8755 | 12676 12898 | 223 223 | 99.55 | AB080275.1 sequence_assemblee
+			  Gap between these two alignments (local misassembly). Inconsistency = -262
+			Real Alignment 45: 8791 8884 | 13196 13289 | 94 94 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 46: 8885 8985 | 13342 13442 | 101 101 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 24; 0 mismatches (number of Ns: 0)
+			Real Alignment 47: 8986 9076 | 13467 13557 | 91 91 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 52; 0 mismatches (number of Ns: 0)
+			Real Alignment 48: 9077 9533 | 13610 14066 | 457 457 | 99.78 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 139; 0 mismatches (number of Ns: 0)
+			Real Alignment 49: 9534 9605 | 14206 14277 | 72 72 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 144; 0 mismatches (number of Ns: 0)
+			Real Alignment 50: 9606 9714 | 14422 14530 | 109 109 | 100.0 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 49; 0 mismatches (number of Ns: 0)
+			Real Alignment 51: 9715 9893 | 14580 14758 | 179 179 | 99.44 | AB080275.1 sequence_assemblee
+			  Indel (> 5bp) between these two alignments: insertion of length 156; 0 mismatches (number of Ns: 0)
+			Real Alignment 52: 9894 10059 | 14915 15080 | 166 166 | 100.0 | AB080275.1 sequence_assemblee
+		Unaligned bases: 6757
+
+Analyzing coverage...
+Writing SNPs into /home/najat/quast_ascii/resultats/51mers/contigs_reports/minimap_output/out_51.used_snps
+
+Analysis is finished!
+Founded SNPs were written into /home/najat/quast_ascii/resultats/51mers/contigs_reports/minimap_output/out_51.used_snps
+
+Results:
+	Local Misassemblies: 5
+	Misassemblies: 0
+		Relocations: 0
+		Translocations: 0
+		Inversions: 0
+	Scaffold gap extensive misassemblies: 0
+	Scaffold gap local misassemblies: 0
+	Misassembled Contigs: 0
+	Misassembled Contig Bases: 0
+	Misassemblies Inter-Contig Overlap ("Extra" Aligned Bases): 0
+Unaligned Contigs: 0 + 1 part
+Half Unaligned Contigs with Misassemblies: 0
+Unaligned Bases in Fully and Partially Unaligned Contigs: 6757
+
+Ambiguously Mapped Contigs: 1
+Total Bases in Ambiguously Mapped Contigs: 16159
+"Extra" Aligned Bases in Ambiguously Mapped Contigs: 0
+Note that --allow-ambiguity option was set to "one" and only first alignment per each of these contigs was used (there is no "extra" aligned bases).
+
+	Covered Bases in Reference: 9393
+	Raw Aligned Bases in Assembly: 9402
+	Total Aligned Bases in Assembly (with "Extras"): 9402
+
+	SNPs: 219
+	Insertions: 3831
+	Deletions: 0
+
