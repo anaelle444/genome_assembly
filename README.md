@@ -56,3 +56,11 @@ Limites et améliorations possibles
 brought to you by an amazing team : Najat, Tara and Anaelle! 
 
 
+## Vérification avec minimap2  :
+
+```bash
+minimap2 -a varankomodo_reference.fasta resultats/out_51.fa > alignment51.sam
+samtools view -bS alignment51.sam > align51.bam
+samtools sort align51.bam sorted51
+samtools index sorted51.bam
+```
