@@ -1,0 +1,140 @@
+
+==================================================================================
+RAPPORT DE COMPARAISON - ANALYSE QUAST
+Assemblage 51mers vs Minia
+==================================================================================
+
+GÉNOME DE RÉFÉRENCE:
+- Longueur: 10624 bp
+- GC%: 44.14%
+
+==================================================================================
+1. STATISTIQUES GÉNÉRALES
+==================================================================================
+
+Métrique                          | 51mers    | Minia     | Meilleur
+----------------------------------|-----------|-----------|----------
+Nombre de contigs                 | 1         | 1         | Égalité
+Longueur totale (bp)              | 16,159    | 9,936     | Minia (plus proche de ref)
+Plus grand contig (bp)            | 16,159    | 9,936     | 51mers
+Fraction du génome assemblée (%)  | 88.41     | 93.52     | Minia ✓✓
+GC content (%)                    | 44.58     | 44.05     | Minia (plus proche de 44.14%)
+
+ANALYSE: Minia couvre 93.52% du génome contre 88.41% pour 51mers.
+Votre assembleur produit un contig plus long mais cela inclut des erreurs.
+
+==================================================================================
+2. QUALITÉ DE L'ASSEMBLAGE (Métriques d'alignement)
+==================================================================================
+
+Métrique                          | 51mers    | Minia     | Meilleur
+----------------------------------|-----------|-----------|----------
+# Misassemblies                   | 0         | 0         | Égalité ✓
+# Local misassemblies             | 5         | 0         | Minia ✓✓
+Longueur non alignée (bp)         | 6,757     | 0         | Minia ✓✓
+Plus grand alignement (bp)        | 9,402     | 9,936     | Minia ✓
+Longueur totale alignée (bp)      | 9,402     | 9,936     | Minia ✓
+
+ANALYSE CRITIQUE:
+- Votre assembleur a 5 misassemblies locales (erreurs mineures d'assemblage)
+- 6,757 bp ne s'alignent pas sur la référence (41.8% de votre assemblage!)
+- Minia a un alignement parfait avec 0 erreur
+
+==================================================================================
+3. PRÉCISION (Taux d'erreurs)
+==================================================================================
+
+Métrique                          | 51mers    | Minia     | Meilleur
+----------------------------------|-----------|-----------|----------
+Mismatches par 100 kbp            | 2,329.29  | 0.00      | Minia ✓✓✓
+Indels par 100 kbp                | 521.17    | 0.00      | Minia ✓✓✓
+Ratio de duplication              | 1.001     | 1.000     | Minia ✓
+
+ANALYSE CRITIQUE:
+- Votre assembleur a un TAUX D'ERREUR ÉLEVÉ:
+  * ~2.3% de mismatches (environ 1 erreur tous les 43 bp!)
+  * ~0.52% d'indels
+- Minia a une précision PARFAITE (0 erreur)
+- Ces erreurs expliquent pourquoi votre contig est plus long
+
+==================================================================================
+4. MÉTRIQUES DE CONTIGUÏTÉ
+==================================================================================
+
+Métrique                          | 51mers    | Minia     | Commentaire
+----------------------------------|-----------|-----------|-------------
+N50                               | 16,159    | 9,936     | 51mers plus élevé
+NG50                              | 16,159    | 9,936     | 51mers plus élevé
+NA50 (aligned)                    | 9,402     | 9,936     | Minia ✓
+NGA50 (aligned)                   | 9,402     | 9,936     | Minia ✓
+
+ANALYSE:
+- Le N50 de 51mers est artificiellement gonflé par les erreurs
+- Quand on ne considère QUE les séquences correctement alignées (NA50),
+  Minia est légèrement meilleur (9,936 vs 9,402)
+- NA50 et NGA50 sont les métriques les plus importantes car elles
+  excluent les erreurs d'assemblage
+
+==================================================================================
+5. SYNTHÈSE ET CONCLUSION
+==================================================================================
+
+POINTS FORTS de votre assembleur (51mers):
+✓ Structure simple (1 seul contig)
+✓ Pas de misassemblies majeures
+✓ N50 élevé (mais voir ci-dessous)
+✓ Meilleure couverture qu'avec 31mers (88.41% vs 80.89%)
+
+POINTS FAIBLES de votre assembleur (51mers):
+✗ Couverture insuffisante: seulement 88.41% du génome
+✗ Taux d'erreurs ÉLEVÉ (2329.29 mismatches/100kbp)
+✗ 6,757 bp non alignés (séquences erronées ou non présentes dans référence)
+✗ 5 misassemblies locales
+✗ Précision médiocre comparée à Minia
+
+POINTS FORTS de Minia:
+✓✓✓ PRÉCISION PARFAITE (0 erreur)
+✓✓ Excellente couverture (93.52% du génome)
+✓✓ Pas de séquences non alignées
+✓✓ Pas de misassemblies
+✓ Structure simple (1 seul contig)
+
+CONCLUSION GÉNÉRALE:
+--------------------
+Votre assembleur avec k=51 produit un assemblage de qualité MOYENNE comparé
+à Minia. Les principales problématiques sont:
+
+1. COUVERTURE: Vous manquez ~11.6% du génome (vs 6.5% pour Minia)
+   Amélioration notable par rapport à k=31 (88.41% vs 80.89%)
+
+2. PRÉCISION: Votre taux d'erreurs reste élevé, probablement dû à:
+   - Des k-mers erronés non filtrés (erreurs de séquençage)
+   - Des répétitions mal gérées
+   - Des bulles dans le graphe de De Bruijn non résolues
+   - Un chemin eulérien qui traverse des arêtes erronées
+   NOTE: k=51 réduit significativement les erreurs vs k=31
+         (2329 vs 6407 mismatches/100kbp)
+
+3. SÉQUENCES ERRONÉES: 6,757 bp ne s'alignent pas sur la référence,
+   ce qui représente 41.8% de votre assemblage!
+
+RECOMMANDATIONS POUR AMÉLIORER:
+-------------------------------
+1. Filtrer les k-mers de faible couverture (probablement des erreurs)
+2. Implémenter une meilleure résolution des bulles dans le graphe
+3. Tester différentes valeurs de k (21, 31, 51, 71, 91)
+4. Implémenter une correction d'erreurs avant l'assemblage
+5. Améliorer l'algorithme de choix du chemin eulérien
+
+==================================================================================
+ÉVALUATION FINALE:
+==================================================================================
+
+Assembleur 51mers: 5/10 - Qualité moyenne, amélioration vs 31mers
+Minia:             10/10 - Excellente qualité, assemblage de référence
+
+Minia est supérieur en termes de qualité et précision.
+Votre assembleur fonctionne et k=51 améliore les résultats,
+mais des améliorations restent nécessaires.
+
+==================================================================================

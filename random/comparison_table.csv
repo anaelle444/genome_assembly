@@ -1,0 +1,13 @@
+Métrique,51mers,Minia
+# contigs,1.0,1.0
+Largest contig,16159.0,9936.0
+Total length,16159.0,9936.0
+Genome fraction (%),88.413,93.524
+# misassemblies,0.0,0.0
+# local misassemblies,5.0,0.0
+Unaligned length,6757.0,0.0
+# mismatches per 100 kbp,2329.29,0.0
+# indels per 100 kbp,521.17,0.0
+N50,16159.0,9936.0
+NA50,9402.0,9936.0
+Duplication ratio,1.001,1.0
