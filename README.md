@@ -26,7 +26,7 @@ Compilation (dans le répertoire `genome_assembly`):
 
 Exécution:
 
-    ./assembler reads.fastq.fq k out.fa
+    ./assembler data/reads.fastq.fq k out.fa
 
 où `k` est la taille du k-mer (entier >= 2). Le programme lit un fichier FASTQ simple
 et produit un fichier FASTA avec les contigs reconstruits.
