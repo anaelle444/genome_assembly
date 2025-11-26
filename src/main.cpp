@@ -200,7 +200,7 @@ int main(int argc, char* argv[]) {
     
     cout << "  " << sequences.size() << " séquences lues" << endl;
     double temps1Ecoule = (double)(clock() - temps1) / CLOCKS_PER_SEC;
-    cout << "  ⏱️  Temps : " << formatTime(temps1Ecoule) << endl << endl;
+    cout << "    Temps : " << formatTime(temps1Ecoule) << endl << endl;
     
     // Étape 2 : Extraction des k-mers
     cout << "Étape 2 : Extraction des k-mers..." << endl;
@@ -208,7 +208,7 @@ int main(int argc, char* argv[]) {
     vector<string> kmers = kmerExtract(k, sequences);
     cout << "  " << kmers.size() << " k-mers extraits et triés" << endl;
     double temps2Ecoule = (double)(clock() - temps2) / CLOCKS_PER_SEC;
-    cout << "  ⏱️  Temps : " << formatTime(temps2Ecoule) << endl;
+    cout << "    Temps : " << formatTime(temps2Ecoule) << endl;
     
     // Écriture des k-mers dans un fichier intermédiaire FASTA
     string fichierKmers = dossierResultats + "/kmers_sorted.fasta";
@@ -220,9 +220,9 @@ int main(int argc, char* argv[]) {
             fichierK << kmers[i] << endl;
         }
         fichierK.close();
-        cout << "  ✅ K-mers sauvegardés dans " << fichierKmers << endl;
+        cout << "   K-mers sauvegardés dans " << fichierKmers << endl;
     } else {
-        cerr << "  ⚠️  Avertissement : impossible d'écrire le fichier " << fichierKmers << endl;
+        cerr << "    Avertissement : impossible d'écrire le fichier " << fichierKmers << endl;
     }
     
     // Écriture des k-mers dans un fichier TSV avec index
@@ -236,7 +236,7 @@ int main(int argc, char* argv[]) {
             fichierKTSV << i << "\t" << kmers[i] << "\t" << prefixe << "\t" << suffixe << endl;
         }
         fichierKTSV.close();
-        cout << "  ✅ K-mers avec index sauvegardés dans " << fichierKmersTSV << endl;
+        cout << "   K-mers avec index sauvegardés dans " << fichierKmersTSV << endl;
     }
     cout << endl;
     
@@ -246,7 +246,7 @@ int main(int argc, char* argv[]) {
     vector<pair<int, int>> arcs = calculArcs(kmers, k);
     cout << "  " << arcs.size() << " arcs calculés" << endl;
     double temps3Ecoule = (double)(clock() - temps3) / CLOCKS_PER_SEC;
-    cout << "  ⏱️  Temps : " << formatTime(temps3Ecoule) << endl;
+    cout << "    Temps : " << formatTime(temps3Ecoule) << endl;
     
     // Écriture des arcs dans un fichier TSV
     string fichierArcs = dossierResultats + "/arcs.tsv";
@@ -263,7 +263,7 @@ int main(int argc, char* argv[]) {
                      << chevauchement << endl;
         }
         fichierA.close();
-        cout << "  ✅ Arcs sauvegardés dans " << fichierArcs << endl;
+        cout << "   Arcs sauvegardés dans " << fichierArcs << endl;
     } else {
         cerr << "  ⚠️  Avertissement : impossible d'écrire le fichier " << fichierArcs << endl;
     }
@@ -275,7 +275,7 @@ int main(int argc, char* argv[]) {
     GrapheBruijn graphe = grapheBruijn(kmers, arcs);
     cout << "  Graphe construit avec " << graphe.nombreNoeuds() << " nœuds" << endl;
     double temps4Ecoule = (double)(clock() - temps4) / CLOCKS_PER_SEC;
-    cout << "  ⏱️  Temps : " << formatTime(temps4Ecoule) << endl;
+    cout << "    Temps : " << formatTime(temps4Ecoule) << endl;
     
     // Écriture du graphe de De Bruijn dans un fichier TXT (format lisible)
     string fichierGrapheTXT = dossierResultats + "/graphe_debruijn.txt";
@@ -308,41 +308,12 @@ int main(int argc, char* argv[]) {
         }
         
         fichierGTXT.close();
-        cout << "  ✅ Graphe sauvegardé dans " << fichierGrapheTXT << endl;
+        cout << "   Graphe sauvegardé dans " << fichierGrapheTXT << endl;
     } else {
         cerr << "  ⚠️  Avertissement : impossible d'écrire le fichier " << fichierGrapheTXT << endl;
     }
     
-    // Écriture du graphe au format DOT pour visualisation avec Graphviz
-    string fichierGrapheDOT = dossierResultats + "/graphe_debruijn.dot";
-    cout << "  Écriture du graphe au format DOT dans " << fichierGrapheDOT << "..." << endl;
-    ofstream fichierGDOT(fichierGrapheDOT);
-    if (fichierGDOT.is_open()) {
-        fichierGDOT << "digraph DeBruijnGraph {" << endl;
-        fichierGDOT << "  rankdir=LR;" << endl;
-        fichierGDOT << "  node [shape=circle, fontsize=10];" << endl;
-        fichierGDOT << "  edge [fontsize=8];" << endl << endl;
-        
-        // Ajouter les nœuds
-        const vector<Noeud>& noeuds = graphe.getNoeuds();
-        for (size_t i = 0; i < noeuds.size(); i++) {
-            fichierGDOT << "  " << i << " [label=\"" << i << "\\n" << noeuds[i].kmer << "\"];" << endl;
-        }
-        fichierGDOT << endl;
-        
-        // Ajouter les arcs
-        for (const auto& arc : arcs) {
-            fichierGDOT << "  " << arc.first << " -> " << arc.second << ";" << endl;
-        }
-        
-        fichierGDOT << "}" << endl;
-        fichierGDOT.close();
-        cout << "  ✅ Graphe DOT sauvegardé dans " << fichierGrapheDOT << endl;
-        cout << "  💡 Pour visualiser : dot -Tpng " << fichierGrapheDOT << " -o graphe.png" << endl;
-    } else {
-        cerr << "  ⚠️  Avertissement : impossible d'écrire le fichier " << fichierGrapheDOT << endl;
-    }
-    cout << endl;
+    
     
     // Étape 5 : Recherche du chemin eulérien et assemblage
     cout << "Étape 5 : Recherche du chemin eulérien et assemblage..." << endl;
@@ -350,7 +321,7 @@ int main(int argc, char* argv[]) {
     string sequenceAssemblee = cheminEulerienEtAssemblage(graphe, kmers, k);
     cout << "  Séquence assemblée : " << sequenceAssemblee.length() << " bases" << endl;
     double temps5Ecoule = (double)(clock() - temps5) / CLOCKS_PER_SEC;
-    cout << "  ⏱️  Temps : " << formatTime(temps5Ecoule) << endl;
+    cout << "    Temps : " << formatTime(temps5Ecoule) << endl;
     
     // Écriture du chemin eulérien dans un fichier
     string fichierChemin = dossierResultats + "/chemin_eulerien.txt";
@@ -362,7 +333,7 @@ int main(int argc, char* argv[]) {
         fichierC << "Séquence assemblée :" << endl;
         fichierC << sequenceAssemblee << endl;
         fichierC.close();
-        cout << "  ✅ Chemin eulérien sauvegardé dans " << fichierChemin << endl;
+        cout << "  Chemin eulérien sauvegardé dans " << fichierChemin << endl;
     }
     cout << endl;
     
@@ -382,30 +353,24 @@ int main(int argc, char* argv[]) {
     double memoireUtilisee = memoireFin - memoireDebut;
     
     cout << endl << "=== Assemblage terminé avec succès ===" << endl;
-    cout << endl << "📊 STATISTIQUES D'EXÉCUTION" << endl;
+    cout << endl << "STATISTIQUES D'EXÉCUTION" << endl;
     cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << endl;
-    cout << "⏱️  Temps total d'exécution : " << formatTime(tempsTotal) << endl;
-    cout << "💾 Mémoire utilisée : " << fixed << setprecision(2) << memoireUtilisee << " MB" << endl;
-    cout << "💾 Mémoire maximale : " << fixed << setprecision(2) << memoireFin << " MB" << endl;
+    cout << " Temps total d'exécution : " << formatTime(tempsTotal) << endl;
+    cout << " Mémoire utilisée : " << fixed << setprecision(2) << memoireUtilisee << " MB" << endl;
+    cout << " Mémoire maximale : " << fixed << setprecision(2) << memoireFin << " MB" << endl;
     cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << endl;
     
     cout << endl << "📁 FICHIERS GÉNÉRÉS" << endl;
     cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << endl;
-    cout << "  ✅ " << dossierResultats << "/kmers_sorted.fasta - K-mers triés (FASTA)" << endl;
-    cout << "  ✅ " << dossierResultats << "/kmers_sorted.tsv - K-mers avec index (TSV)" << endl;
-    cout << "  ✅ " << dossierResultats << "/arcs.tsv - Liste des arcs du graphe (TSV)" << endl;
-    cout << "  ✅ " << dossierResultats << "/graphe_debruijn.txt - Description du graphe" << endl;
-    cout << "  ✅ " << dossierResultats << "/graphe_debruijn.dot - Graphe pour visualisation" << endl;
-    cout << "  ✅ " << dossierResultats << "/chemin_eulerien.txt - Chemin eulérien et séquence" << endl;
-    cout << "  ✅ " << fichierSortieFinal << " - Séquence assemblée finale (FASTA)" << endl;
+    cout << dossierResultats << "/kmers_sorted.fasta - K-mers triés (FASTA)" << endl;
+    cout <<  dossierResultats << "/kmers_sorted.tsv - K-mers avec index (TSV)" << endl;
+    cout << dossierResultats << "/arcs.tsv - Liste des arcs du graphe (TSV)" << endl;
+    cout <<  dossierResultats << "/graphe_debruijn.txt - Description du graphe" << endl;
+    cout << dossierResultats << "/chemin_eulerien.txt - Chemin eulérien et séquence" << endl;
+    cout <<  fichierSortieFinal << " - Séquence assemblée finale (FASTA)" << endl;
     cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << endl;
     
-    cout << endl << "💡 VISUALISATION DU GRAPHE" << endl;
-    cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << endl;
-    cout << "Pour générer une image du graphe, utilisez Graphviz :" << endl;
-    cout << "  $ dot -Tpng " << dossierResultats << "/graphe_debruijn.dot -o " << dossierResultats << "/graphe.png" << endl;
-    cout << "  $ dot -Tsvg " << dossierResultats << "/graphe_debruijn.dot -o " << dossierResultats << "/graphe.svg" << endl;
-    cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << endl;
+   
     
     cout << endl << "✨ Thank you for trusting us with your genome assembly ✨" << endl;
     
